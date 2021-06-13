@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAN TO PART</title>
+    <link rel="shortcut icon" href="icons/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="../../js/homeScript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="css/styleDashBoard.css">
+    <link rel="stylesheet" href="css/homeStyle.css"/>
+    <link rel="stylesheet" href="../css/styleDashBoard.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <style>
+
+        .submit_button {
+            background-color: #3db2db; /* aqua */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #78c3de;
+        }
+        input{
+            width: 60%;
+            padding: 10px 4px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            width: 40%;
+            padding: 10px 4px;
+            margin: 12px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<!--Make sure User logged in  -->
+<script>
+    let login = sessionStorage.getItem("login");
+    let email = sessionStorage.getItem("user_email");
+    if(login !== "true"){
+        alert("You have not logged in");
+        window.location.href = "../../loginPage/login.html";
+    }
+</script>
+<body onload="load()">
+
+<input type="checkbox" id="check">
+<!--header area start-->
+<header>
+    <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+        <a href="../../homePage.html">
+            <img src="icons/icon.png" alt="Plan To Part Logo">
+        </a>
+    </div>
+
+    <div class="right_area">
+
+        <button onclick="logOut()" class="logout_btn">Logout</button>
+        <a href="../../helpPage/help.html">Help</a>
+        <a href="../../SecurityPage/security.html">Security</a>
+        <a href="../../homePage.html#about">About Us</a>
+        <a href="../../contactHtml/contactUs.html">Contact</a>
+        <a href="../Membership_Section/membership.html">Plans</a>
+        <a href="../../homePage.html">Home</a>
+
+    </div>
+
+</header>
+<!--header area end-->
+<!--mobile navigation bar start-->
+<div class="mobile_nav">
+    <div class="nav_bar">
+        <img src="icons/icon1.PNG" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+    </div>
+    <div class="mobile_nav_items">
+        <a href="../Membership_Section/membership.html"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+
+        <a href="../Financial_Personal_Sections/personalInfo.html"><i
+                class="fas fa-cogs"></i><span>Personal Info & ID's</span></a>
+
+        <a href="../HomeProperty/HomeProperty.html"><i class="fas fa-table"></i><span>Home & Property</span></a>
+
+        <a href="../Financial_Personal_Sections/Financial.html"><i class="fas fa-th"></i><span>Financial</span></a>
+
+        <a href="../socialNetwork_section/socialnetwork.html"><i
+                class="fas fa-info-circle"></i><span>Social Network</span></a>
+
+        <a href="../Health_Section/health.html"><i class="fas fa-sliders-h"></i><span>Health</span></a>
+
+        <a href="../Legal/legal.html"><i class="fas fa-sliders-h"></i><span>Legal</span></a>
+        <a href="../Report/Report.html"><i class="fas fa-sliders-h"></i><span>Report</span></a>
+
+    </div>
+</div>
+<!--mobile navigation bar end-->
+<!--sidebar start-->
+<div class="sidebar">
+    <div class="profile_info">
+        <img id="Pro_pic" src="icons/Legal.png" class="profile_image" alt="">
+        <h4 id="user_name">New User</h4>
+    </div>
+    <a href="../Membership_Section/membership.html"><i class="fas fa-desktop"></i>
+        <span>Dashboard</span></a>
+    <a href="../Financial_Personal_Sections/personalInfo.html"><i class="fas fa-cogs"></i>
+        <span>Personal Info & ID's</span></a>
+    <a href="../HomeProperty/HomeProperty.html"><i class="fas fa-table"></i>
+        <span>Home & Property</span></a>
+    <a href="../Financial_Personal_Sections/Financial.html"><i class="fas fa-th"></i>
+        <span>Financial</span></a>
+    <a href="../socialNetwork_section/socialnetwork.html"><i class="fas fa-info-circle"></i>
+        <span>Social Network</span></a>
+    <a href="../Health_Section/health.html"><i class="fas fa-sliders-h"></i>
+        <span>Health</span></a>
+    <a href="../Legal/legal.html"><i class="fas fa-drafting-compass"></i>
+
+        <span>Legal</span></a>
+    <a href="../Report/Report.html"><i class="fas fa-drafting-compass"></i>
+        <span>Report</span></a>
+</div>
+
+<!-- Dashboard end -->
+
+<section id="works">
+    <div class="inner-width">
+        <center><h1 class="section-title" style="margin-left: -25px">
+            Report Generation
+        </h1>
+        </center>
+    </div>
+</section>
+
+<center><h2>Click to generate report</h2></center>
+
+<center>
+    <button id="gen" class="gen_button" type="button" onclick="re_port()"><span>Create Report</span></button>
+</center>
+<center>
+    <button id="Financial" class="gen_button" type="button" onclick="Report('Financial')"><span>Create Financial Report</span></button>
+</center>
+<center>
+    <button id="Health" class="gen_button" type="button" onclick="Report('Health')"><span>Create Health Report</span></button>
+</center>
+<center>
+    <button id="Personal" class="gen_button" type="button" onclick="Report('Personal')"><span>Create Personal Report</span></button>
+</center>
+<center>
+    <button id="Home" class="gen_button" type="button" onclick="Report('Home')"><span>Create Home Report</span></button>
+</center>
+<center>
+    <button id="Social" class="gen_button" type="button" onclick="Report('Social')"><span>Create Social Report</span></button>
+</center>
+<center>
+    <button id="Legal" class="gen_button" type="button" onclick="Report('Legal')"><span>Create Legal Report</span></button>
+</center>
+
+
+
+
+
+
+
+</body>
+<!-- Footer--->
+
+<footer>
+    <div class="inner-width">
+        <div class="policy">
+            <a class="bt" href="../../homePage.html#about">About Us</a>
+            <a class="bt" href="../../SecurityPage/security.html">Privacy</a>
+        </div>
+
+        <div class="copyright">
+            &copy; | 2020, <a href="#">Plan To Part </a>
+        </div>
+
+        <div class="sm">
+            <a href="https://www.facebook.com/Plan-To-Part-101162041856515"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+<!--Go Back Top-->
+<button class="goTop fas fa-arrow-up"></button>
+
+<script>
+    // Javascript is used here to show the opening and closing functionality of the tab
+    function load() {
+        if (sessionStorage.getItem("img")){
+            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+        }
+        else{
+            console.log("No Img");
+        }
+    }
+    function logOut(){
+        sessionStorage.clear();
+        alert("You've successfully logged out.");
+        window.location.href = "../../loginPage/login.html";
+    }
+
+    function re_port(){
+
+        data={};
+
+        data['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log(xhr.responseText);
+                //alert(String(xhr.responseText));
+                if(String(xhr.responseText)==="Done") {
+                    document.getElementById("gen").disabled = true;
+                    document.getElementById("Financial").innerText = "Report Sent to Email";
+                }
+                else{
+                    document.getElementById("Financial").innerText = "No Financial data Available";
+                }
+            }
+        };
+        xhr.open('POST', "Report.php", true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
+
+    }
+
+    function Report(name){
+        var data = {};
+        document.getElementById(name).disabled = true;
+        data['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log(xhr.responseText);
+                //alert(String(xhr.responseText));
+                if(String(xhr.responseText)==="Done") {
+
+                    document.getElementById(name).innerText = "Report Sent to Email";
+                }
+                else{
+                    document.getElementById(name).innerText = "No data Available";
+                }
+            }
+        };
+        switch (name){
+            case "Financial":
+                xhr.open('POST', "Financial_Report.php", true);
+                break;
+            case "Health":
+                xhr.open('POST', "Health_Report.php", true);
+                break;
+            case "Personal":
+                xhr.open('POST', "Personal_Report.php", true);
+                break;
+            case "Home":
+                xhr.open('POST', "Home_Report.php", true);
+                break;
+            case "Social":
+                xhr.open('POST', "Social_Report.php", true);
+                break;
+            case "Legal":
+                xhr.open('POST', "Legal_Report.php", true);
+                break;
+            default:
+                console.log("default");
+        }
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
+    }
+
+
+</script>
+</body>
+</html>

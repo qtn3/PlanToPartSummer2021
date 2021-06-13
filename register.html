@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Register</title>
+    <link
+            rel="shortcut icon"
+            href="https://cdn.glitch.com/bde716c8-a7be-413a-8d34-d62a703710c6%2Ficon.png?v=1603746656779"
+            type="image/x-icon"
+    />
+    <meta name="google-signin-client_id" content="438333229045-1lqhpbe3iacjq42bfn12895mbp8cv4bp.apps.googleusercontent.com"/>
+
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!--<link rel="stylesheet" type="text/css" href="/loginPage/Style/logInStyle.css"/>-->
+    <link rel="stylesheet" type="text/css" href="./loginPage/Style/main.css"/>
+    <link rel="stylesheet" type="text/css" href="./loginPage/Style/util.css"/>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
+
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <link
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+    />
+
+
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+
+<body>
+<div class="limiter">
+    <!--<div class="row">-->
+        <div class="container-login100" style="background-image: url('https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2Fimg15.jpg?v=1606286283014')">
+            <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+                <form class="login100-form validate-form flex-sb flex-w" action="register_user.php" method="post">
+                    <span class="login100-form-title p-b-53">Register a New Account</span>
+                    <div class="wrap-login100 validate-input">
+                        <input class="input100" type="text" id="fullName" name="name" placeholder="Full Name" required/>
+                        <span><i class="focus-input100"></i></span>
+                    </div>
+                    <div class="wrap-login100 validate-input">
+                        <input  class="input100"
+                                type="email"
+                                id="inputEmail"
+                                name="email"
+                                onkeyup="send()"
+                                placeholder="Email Address"
+                                required
+                        />
+                        <span><i class="focus-input100"></i></span>
+                    </div>
+                    <div class="wrap-login100 validate-input">
+                        <input  class="input100"
+                                type="password"
+                                id="inputPassword"
+                                placeholder="Password"
+                                required
+                                name="pass"
+                        />
+                        <span><i class="focus-input100"></i></span>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 d-flex">
+                            <div class="custom-control custom-checkbox">
+                                <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="cb1"
+                                        required
+                                        name="s"
+                                />
+                                <label class="custom-control-label text-black" for="cb1">I agree to all
+                                    <a href="formPage/privacy.html">terms & conditions</a></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn m-t-17 m-b-10">
+                        <button
+                                class="login100-form-btn"
+                                type="submit"
+                                id="SignUp"
+                                name="push" >
+                            Sign Up
+                        </button>
+                    </div>
+                    <div class="text-black mb-3">or register with</div>
+                    <div class="row mb-3">
+                        <!--<div class="col-4">
+                            <a href="" class="btn btn-block btn-social btn-facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>-->
+                        <div class="col-4" id="google_button">
+                            <a href="" class="btn btn-block btn-social btn-google">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </div>
+                        <!--<div class="col-4">
+                            <a href="" class="btn btn-block btn-social btn-twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>-->
+                    </div>
+                    <div class="text-black">
+                        Already have an account?
+                        <a href="./loginPage/login.html" class="btn btn-primary mb-3">Login here</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!--<div class="col-lg-6 col-md-6 d-none d-md-block ">
+            <img
+                    src="https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2Fimg15.jpg?v=1606286283014"
+                    width="790px"
+                    height="890px"
+            />-->
+</div>
+
+<script>
+    function send() {
+        var email = document.getElementById("inputEmail").value;
+        sessionStorage.setItem("email", email);
+    }
+
+
+
+</script>
+<script>
+    function onSuccess(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+        console.log(googleUser.getAuthResponse().id_token);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log('Signed in as: ' + JSON.parse(xhr.responseText));
+                sessionStorage.setItem("email",googleUser.getBasicProfile().getEmail())
+                sessionStorage.setItem("login", "true");
+                sessionStorage.setItem("user_email", googleUser.getBasicProfile().getEmail());
+                window.location.assign(String(JSON.parse(xhr.responseText)));
+            }
+        };
+        xhr.open('POST', 'register_user.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        var d = {'google' : 1, 'id_token': id_token, 'email': String(googleUser.getBasicProfile().getEmail()) };
+        console.log(d);
+        xhr.send(JSON.stringify(d));
+
+
+
+    }
+    function onFailure(error) {
+        console.log(error);
+    }
+    function renderButton() {
+
+        gapi.signin2.render('google_button', {
+            'scope': 'profile email',
+            'width': 240,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+
+        });
+    }
+</script>
+
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+</body>
+</html>
+

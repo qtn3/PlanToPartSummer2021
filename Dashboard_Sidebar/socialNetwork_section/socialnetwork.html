@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAN TO PART</title>
+    <link rel="shortcut icon" href="icons/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.cs"/>
+
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="js/homeScript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="../css/styleDashBoard.css">
+    <link rel="stylesheet" href="css/homeStyle.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <style>
+
+        .submit_button {
+            background-color: #3db2db; /* aqua */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #78c3de;
+        }
+        input{
+            width: 60%;
+            padding: 10px 4px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            width: 40%;
+            padding: 10px 4px;
+            margin: 12px 0;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<!--Make sure User logged in  -->
+<script>
+    let login = sessionStorage.getItem("login");
+    if(login !== "true"){
+        alert("You have not logged in");
+        window.location.href = "../../loginPage/login.html";
+    }
+</script>
+<body onload="dataLoad()">
+
+<input type="checkbox" id="check">
+<!--header area start-->
+<header>
+    <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+        <a href="../../homePage.html">
+            <img src="icons/icon.png" alt="Plan To Part Logo">
+        </a>
+    </div>
+
+    <div class="right_area">
+
+        <button onclick="logOut()" class="logout_btn">Logout</button>
+        <a href="../../helpPage/help.html">Help</a>
+        <a href="../../SecurityPage/security.html">Security</a>
+        <a href="../../homePage.html#about">About Us</a>
+        <a href="../../contactHtml/contactUs.html">Contact</a>
+        <a href="../Membership_Section/membership.html">Plans</a>
+        <a href="../../homePage.html">Home</a>
+
+    </div>
+
+</header>
+<!--header area end-->
+<!--mobile navigation bar start-->
+<div class="mobile_nav">
+    <div class="nav_bar">
+        <img src="1.png" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+    </div>
+    <div class="mobile_nav_items">
+        <a href="../Membership_Section/membership.html"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+
+        <a href="../Financial_Personal_Sections/personalInfo.html"><i
+                class="fas fa-cogs"></i><span>Personal Info & ID's</span></a>
+
+        <a href="../HomeProperty/HomeProperty.html"><i class="fas fa-table"></i><span>Home & Property</span></a>
+
+        <a href="../Financial_Personal_Sections/Financial.html"><i class="fas fa-th"></i><span>Financial</span></a>
+
+        <a href="../socialNetwork_section/socialnetwork.html"><i
+                class="fas fa-info-circle"></i><span>Social Network</span></a>
+
+        <a href="../Health_Section/health.html"><i class="fas fa-sliders-h"></i><span>Health</span></a>
+
+        <a href="../Legal/legal.html"><i class="fas fa-sliders-h"></i><span>Legal</span></a>
+        <a href="../Report/Report.html"><i class="fas fa-sliders-h"></i><span>Report</span></a>
+    </div>
+</div>
+<!--mobile navigation bar end-->
+<!--sidebar start-->
+<div class="sidebar">
+    <div class="profile_info">
+        <img id="Pro_pic" src="icons/Legal.png" class="profile_image" alt="">
+        <h4 id="user_name">New User</h4>
+    </div>
+    <a href="../Membership_Section/membership.html"><i class="fas fa-desktop"></i>
+        <span>Dashboard</span></a>
+    <a href="../Financial_Personal_Sections/personalInfo.html"><i class="fas fa-cogs"></i>
+        <span>Personal Info & ID's</span></a>
+    <a href="../HomeProperty/HomeProperty.html"><i class="fas fa-table"></i>
+        <span>Home & Property</span></a>
+    <a href="../Financial_Personal_Sections/Financial.html"><i class="fas fa-th"></i>
+        <span>Financial</span></a>
+    <a href="socialnetwork.html"><i class="fas fa-info-circle"></i>
+        <span>Social Network</span></a>
+    <a href="../Health_Section/health.html"><i class="fas fa-sliders-h"></i>
+        <span>Health</span></a>
+    <a href="../Legal/legal.html"><i class="fas fa-drafting-compass"></i>
+        <span>Legal</span></a>
+    <a href="../Report/Report.html"><i class="fas fa-drafting-compass"></i>
+        <span>Report</span></a>
+</div>
+<!--sidebar end-->
+
+<section id="works">
+    <div class="inner-width">
+        <h1 class="section-title" style="margin-left: -25px">
+            Social Network
+        </h1>
+        <center><h2>Add to your Plan to Part:</h2></center>
+        <br>
+    </div>
+</section>
+
+
+<center>
+    <div id="status">
+
+    </div>
+    <form id="socialMedia" name="socialMedia" onsubmit="return submit()" method="post">
+        <!-- All the tabs are designed here -->
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Add Social Media
+        </button>
+
+        <!-- Content of Social Network tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the Add Social Media tab will be clicked -->
+                <input type="checkbox" id="Facebook" name="Facebook">
+                <label for="Facebook"> I have a Facebook account</label><br>
+                <input type="checkbox" id="Twitter" name="Twitter">
+                <label for="Twitter"> I have a Twitter account</label><br>
+                <input type="checkbox" id="Instagram" name="Instagram">
+                <label for="Instagram"> I have an Instagram account</label><br>
+                <input type="checkbox" id="Snapchat" name="Snapchat">
+                <label for="Snapchat"> I have a Snapchat account</label><br>
+                <input type="checkbox" id="LinkedIn" name="LinkedIn">
+                <label for="LinkedIn"> I have a LinkedIn account</label><br>
+                <input type="checkbox" id="Social_other" name="Social_other">
+                <label for="Social_other"> Other:</label><br>
+                <input type="text" id="Social_comment" name="Social_other"><br>
+            </p>
+        </div>
+        <center>
+            <input class="submit_button" type="submit" name="submit" value="SAVE"/>
+        </center>
+    </form>
+</center>
+
+<!-- Dashboard end -->
+
+<!-- Footer--->
+<!-- There is something wrong with the footer links -->
+<footer style="margin-top: 700px">
+    <div class="inner-width">
+        <div class="policy">
+            <a class="bt" href="../../homePage.html#about">About Us</a>
+            <a class="bt" href="../../formPage/privacy.html">Privacy</a>
+        </div>
+
+        <div class="copyright">
+            &copy; | 2020, <a href="#">Plan To Part </a>
+        </div>
+
+        <div class="sm">
+            <a href="https://www.facebook.com/Plan-To-Part-101162041856515"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+<!--Go Back Top-->
+<button class="goTop fas fa-arrow-up"></button>
+
+
+<!--	
+    <script type="text/javascript">
+	// Code for the mobile nav
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+	-->
+
+<script>
+    // Javascript is used here to show the opening and closing functionality of the tab
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    // this for loop will check all the tabs with className "accordion" and provide them the same functionality
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+    function logOut(){
+        sessionStorage.clear();
+        // Testing code HERE----------
+        //let login = sessionStorage.getItem("login");
+        //let email = sessionStorage.getItem("user_email");
+        //alert(login + email); // return 0 after clearing
+        // Testing code HERE----------
+        alert("You've successfully logged out.");
+        window.location.href = "../../loginPage/login.html";
+    }
+
+
+    var inputs = document.querySelectorAll('input, textarea');
+    var data = {};
+    var d = {};
+    function dataLoad() {
+
+        if (sessionStorage.getItem("img")){
+            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+        }
+        else{
+            console.log("No Img");
+        }
+
+        d['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                //alert(String( xhr.responseText));
+                if (xhr.responseText === '"NO"')
+                    alert("no data");
+                else {
+                    var response = JSON.parse(xhr.response);
+                    for (var i = 0; i < inputs.length - 1; ++i) {
+
+                        var id = String(inputs[i].id);
+                        if(id!=null)
+                            if(String(xhr.response[id])!=null)
+                                if (String(response[id])==="true")
+                                    document.getElementById(id).checked = true;
+                                else
+                                    document.getElementById(id).value = String(response[id]);
+                    }
+                }
+            }
+        };
+        xhr.open('POST', 'socialnetwork_load.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(d));
+        xhr.send(JSON.stringify(d));
+    }
+
+
+
+    function submit(event) {
+        var form = document.getElementById("socialMedia");
+        var inputs = document.querySelectorAll('input, textarea');
+        for (var i = 0; i < inputs.length; ++i) {
+            if (inputs[i].type=="checkbox")
+                data[inputs[i].id] = inputs[i].checked;
+            else
+                data[inputs[i].id] = inputs[i].value;
+        }
+        data['email'] = String(sessionStorage.getItem("email"));
+        console.log(data);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("status").innerText = "Data Saved Successfully";
+                console.log(xhr.responseText);
+                alert(String(xhr.responseText));
+            }
+        };
+        xhr.open('POST', 'socialnetwork.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
+        event.preventDefault();
+    }
+    document.getElementById("socialMedia").addEventListener("submit", submit);
+
+</script>
+
+</body>
+</html>
